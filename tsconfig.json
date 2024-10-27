@@ -1,26 +1,30 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6",                        // Современный стандарт ES6 для поддержки новых функций JavaScript
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "DOM",                                // Работа с DOM API
+      "DOM.Iterable",                       // Поддержка итераций в DOM (например, NodeList)
+      "ESNext"                              // Современные возможности ECMAScript
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "allowJs": true,                        // Поддержка JavaScript файлов в проекте
+    "skipLibCheck": true,                   // Пропуск проверки типов в библиотеках (ускоряет компиляцию)
+    "esModuleInterop": true,                // Совместимость с CommonJS модулями
+    "allowSyntheticDefaultImports": true,   // Позволяет импортировать CommonJS модули как ES6
+    "strict": true,                         // Включает строгий режим TypeScript
+    "forceConsistentCasingInFileNames": true, // Строгая проверка регистра в именах файлов
+    "noFallthroughCasesInSwitch": true,     // Запрещает неявное "падение" в switch, предотвращая ошибки
+    "module": "ESNext",                     // Использование современных ES модулей
+    "moduleResolution": "node",             // Разрешение модулей по стандарту Node.js
+    "resolveJsonModule": true,              // Позволяет импортировать JSON файлы
+    "isolatedModules": true,                // Компиляция каждого файла как отдельного модуля (важно для Vite и CRA)
+    "noEmit": true,                         // Запрещает вывод скомпилированных файлов (только для проверки типов)
+    "jsx": "react-jsx"                      // Поддержка JSX для React (новый синтаксис React 17+)
   },
   "include": [
-    "src"
+    "src"                                   // Включает все файлы внутри директории src
+  ],
+  "exclude": [
+    "node_modules",                         // Исключает директорию node_modules
+    "dist"                                  // Исключает директорию с скомпилированными файлами
   ]
 }

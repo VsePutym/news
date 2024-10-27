@@ -1,0 +1,127 @@
+.Logo {
+	position: relative;
+	width: 100px;
+	&:hover {
+		scale: 1.3;
+		transform: rotate(360deg);
+	}
+	transition: ease-in 0.5s;
+	cursor: pointer;
+}
+
+.mainTitle {
+	color: #ffffff; // Цвет заголовка
+	font-size: 2.5rem; // Размер шрифта
+	font-weight: bold; // Жирный шрифт
+	margin-left: 20px; // Отступ слева
+}
+.wrapperTitle{
+	display: flex;
+	align-items: center;
+}
+.wrapperLogo {
+	display: grid;
+	grid-template-columns: 2fr 1fr 0.5fr; // Расположение в три колонки
+	gap: 50px;
+	padding: 20px; // Отступы
+	align-items: center; // Вертикальное центрирование
+}
+
+.appBar {
+	position: relative;
+	z-index: 1000;
+	margin: 0 auto;
+	padding: 15px 30px; // Увеличенные отступы
+}
+
+.wrapperMenu {
+	align-items: center;
+	cursor: pointer;
+	text-align: center;
+	margin-left: 30px; // Отступ слева
+	background-color: rgba(255, 255, 255, 0.1); // Полупрозрачный фон
+	padding: 10px 15px; // Отступы вокруг иконки
+	border-radius: 5px; // Закругленные углы
+	transition: background-color 0.3s; // Плавный переход цвета
+	
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.2); // Более яркий фон при наведении
+	}
+}
+
+.textMenu {
+	color: #ffffff; // Цвет текста
+	font-size: 16px; // Размер текста
+	margin-left: 10px; // Отступ слева для текста
+}
+
+.navIcons {
+	display: flex;
+	align-items: center;
+	margin: 0 20px; // Отступы между иконками
+	background-color: rgba(255, 255, 255, 0.1); // Полупрозрачный фон
+	padding: 10px 15px; // Отступы вокруг иконки
+	border-radius: 5px; // Закругленные углы
+}
+
+.icon {
+	font-size: 40px !important; // Размер иконок
+	color: #d42a32; // Цвет иконок
+	margin: 0 10px; // Отступы между иконками
+	transition: all 0.5s ease; // Плавный переход
+	cursor: pointer;
+	&:hover {
+		scale: 1.5;
+		
+	}
+}
+
+@media (max-width: 1160px) {
+	.wrapperMenu {
+		margin-left: 0;
+	}
+	.navIcons{
+		margin: 0;
+	}
+}
+@media (max-width: 1004px) {
+	.mainTitle{
+		font-size: 30px;
+	}
+	.navIcons{
+		display: none;
+	}
+	.wrapperLogo{
+		grid-template-columns: 2fr 1fr;
+	}
+	.appBar{
+		padding: 20px 15px;
+	}
+}
+
+@media (max-width: 690px) {
+	.wrapperLogo{
+		padding: 0;
+	}
+	.wrapperMenu{
+		margin-left: 0;
+	}
+	.mainTitle{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 475px) {
+	.Logo{
+		width: 80px;
+	}
+	.wrapperTitle{
+		display: block;
+		text-align: left;
+	}
+	.mainTitle{
+		font-size: 15px;
+		margin: 0;
+		padding-top: 20px;
+	}
+}

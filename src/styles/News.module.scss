@@ -1,0 +1,112 @@
+.newsContainer {
+	background-color: #f5f5f5; // Задний фон
+}
+
+.title {
+	font-size: 2.5rem;
+	color: #263238;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.wrapperTittle{
+	text-align: center;
+	
+}
+.subtitle {
+	font-size: 1.5rem;
+	color: #607d8b;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.newsList {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 20px;
+	gap: 50px;
+}
+
+.newsItem {
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(38, 50, 56, 0.2); // Цвет тени #263238 с прозрачностью
+	padding: 15px;
+	margin: 10px; // Отступ между карточками
+	flex: 0 1 calc(33.33% - 20px); // Каждая карточка занимает 1/3 ширины контейнера
+	transition: transform 0.7s, box-shadow 0.3s, background-color 0.3s, color 0.3s; // Плавный эффект при наведении
+	&:hover {
+		transform: scale(1.05) rotate(2deg); // Увеличение и легкий поворот
+		background-color: #263238; // Смена фона на #263238
+		color: white; // Цвет текста при наведении
+		box-shadow: 0 8px 16px rgba(38, 50, 56, 0.3); // Более глубокая тень с цветом #263238
+	}
+	
+	// Стили для заголовка и описания
+	.title, .description {
+		transition: color 0.3s; // Плавный переход цвета текста
+	}
+	
+	&:hover .title, &:hover .description {
+		color: #ffffff; // Цвет текста при наведении
+	}
+	
+	.img {
+		transition: transform 0.7s ease-in-out; // Плавный эффект для изображения
+		
+		&:hover {
+			transform: scale(1.1); // Увеличение изображения
+		}
+	}
+}
+
+
+
+.img {
+	width: 100%;
+	object-fit: cover; // Обеспечивает правильное отображение изображения
+	border-radius: 8px; // Закругленные углы
+}
+
+.newsTitle {
+	text-align: start;
+	font-size: 1.5rem;
+	color: #455a64;
+	margin: 10px 0;
+}
+
+.description {
+	text-align: start;
+	color: #757575;
+	margin: 10px 0;
+	font-size: 1rem; // Увеличение шрифта описания
+}
+
+.date {
+	font-size: 0.9rem;
+	color: #b0bec5;
+	margin-top: 5px; // Отступ сверху
+}
+
+.loadingWrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	gap: 50px;
+}
+
+@media (max-width: 1200px) {
+	.newsList{
+		margin-right: 15px;
+		margin-left: 15px;
+		gap: 0;
+		display: block;
+	}
+}
+@media (max-width: 420px) {
+	.newsTitle{
+		font-size: 1.1rem;
+	}
+}
