@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import { searchNews } from '../../actions/allNews';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { selectorPage } from '../../selectors/selectorNews';
+import { newsSelectors } from '../../selectors/selectorNews'
 import { setSearch } from '../../stores/newsSlice';
 import typesNews from '../../types/category';
 
@@ -16,7 +16,7 @@ interface DrawerListProps {
 const DrawerList: React.FC<DrawerListProps> = ({ onClose }) => {
 	
 	const dispatch = useAppDispatch();
-	const pageCurrent = useAppSelector(selectorPage);
+	const pageCurrent = useAppSelector(newsSelectors.page);
 	
 	const handleClick = (str: typesNews) => {
 		dispatch(searchNews({ text: str, page: pageCurrent }));
@@ -32,7 +32,7 @@ const DrawerList: React.FC<DrawerListProps> = ({ onClose }) => {
 			<Divider />
 			<ul>
 				{Object.values(typesNews).map((type) => (
-					<div key={type}>
+					<li key={type}>
 						<Button
 							variant="text"
 							sx={{ color: '#263238', fontSize: '20px', mb: '30px' }}
@@ -40,7 +40,7 @@ const DrawerList: React.FC<DrawerListProps> = ({ onClose }) => {
 						>
 							{type}
 						</Button>
-					</div>
+					</li>
 				))}
 			</ul>
 		</Box>

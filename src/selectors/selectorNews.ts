@@ -1,6 +1,8 @@
 import { RootState } from '../stores/store'
 
-export const selectorNews = (state: RootState) => state.news.allNews
-export const selectorPage = (state: RootState) => state.news.page;
-export const selectorSearch = (state: RootState) => state.news.search;
-export const selectorStatus = (state: RootState) => state.news.status
+export const newsSelectors = {
+	allNews: (state: RootState) => state.news.allNews,
+	page: (state: RootState) => state.news.page,
+	search: (state: RootState) => state.news.search,
+	status: (state: RootState) => state.news.status,
+};

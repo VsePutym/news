@@ -2,7 +2,7 @@ import { Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
 import { searchNews } from '../../actions/allNews';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { selectorPage } from '../../selectors/selectorNews';
+import { newsSelectors } from '../../selectors/selectorNews'
 import { setSearch } from '../../stores/newsSlice';
 import style from '../../styles/Search.module.scss';
 import SearchIcon from '@mui/icons-material/Search';
@@ -12,7 +12,7 @@ const Search = () => {
 	
 	const [textInput, setText] = useState<string>('');
 	const dispatch = useAppDispatch();
-	const pageCurrent = useAppSelector<number>(selectorPage);
+	const pageCurrent = useAppSelector<number>(newsSelectors.page);
 	
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setText(e.currentTarget.value);

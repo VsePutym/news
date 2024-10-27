@@ -1,7 +1,6 @@
 import { Fab } from '@mui/material'
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
 import { useEffect, useState } from 'react'
-import style from './ScrollToTop.module.scss' // Можно подключить свой модуль стилей
 
 const ScrollToTop = () => {
 	const [showButton, setShowButton] = useState(false)

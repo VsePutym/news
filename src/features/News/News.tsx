@@ -4,15 +4,15 @@ import { useEffect, useRef } from 'react'
 import { hotNews, searchNews } from '../../actions/allNews'
 import Loading from '../../components/Loading/Loading'
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
-import { selectorNews, selectorPage, selectorSearch, selectorStatus } from '../../selectors/selectorNews'
+import { newsSelectors } from '../../selectors/selectorNews'
 import { setSearch } from '../../stores/newsSlice'
 import style from '../../styles/News.module.scss'
 
 const News = () => {
-	const news = useAppSelector(selectorNews)
-	const pageCurrent = useAppSelector(selectorPage)
-	const searchName = useAppSelector(selectorSearch)
-	const status = useAppSelector(selectorStatus)
+	const news = useAppSelector(newsSelectors.allNews)
+	const pageCurrent = useAppSelector(newsSelectors.page)
+	const searchName = useAppSelector(newsSelectors.search)
+	const status = useAppSelector(newsSelectors.status)
 	const dispatch = useAppDispatch()
 	
 
